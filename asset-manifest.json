@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/datai-website/static/css/main.3ab623f4.css",
-    "main.js": "/datai-website/static/js/main.8ed25bd7.js",
-    "static/media/visual-intelligence-platform.jpg": "/datai-website/static/media/visual-intelligence-platform.5fefa6c35ef6bdf6dc5a.jpg",
-    "static/media/retail-automation-hub.jpg": "/datai-website/static/media/retail-automation-hub.1aeb65e9dc8f1620e191.jpg",
-    "static/media/about-us.jpg": "/datai-website/static/media/about-us.ade8f82db84246824840.jpg",
-    "static/media/get-in-touch.jpg": "/datai-website/static/media/get-in-touch.bd2f338c2a45b8fdb861.jpg",
-    "static/media/home.jpg": "/datai-website/static/media/home.9432c43ae197e5831dcd.jpg",
-    "index.html": "/datai-website/index.html",
-    "main.3ab623f4.css.map": "/datai-website/static/css/main.3ab623f4.css.map",
-    "main.8ed25bd7.js.map": "/datai-website/static/js/main.8ed25bd7.js.map"
+    "main.css": "/static/css/main.3ab623f4.css",
+    "main.js": "/static/js/main.59ef4118.js",
+    "static/media/visual-intelligence-platform.jpg": "/static/media/visual-intelligence-platform.5fefa6c35ef6bdf6dc5a.jpg",
+    "static/media/retail-automation-hub.jpg": "/static/media/retail-automation-hub.1aeb65e9dc8f1620e191.jpg",
+    "static/media/about-us.jpg": "/static/media/about-us.ade8f82db84246824840.jpg",
+    "static/media/get-in-touch.jpg": "/static/media/get-in-touch.bd2f338c2a45b8fdb861.jpg",
+    "static/media/home.jpg": "/static/media/home.9432c43ae197e5831dcd.jpg",
+    "index.html": "/index.html",
+    "main.3ab623f4.css.map": "/static/css/main.3ab623f4.css.map",
+    "main.59ef4118.js.map": "/static/js/main.59ef4118.js.map"
   },
   "entrypoints": [
     "static/css/main.3ab623f4.css",
-    "static/js/main.8ed25bd7.js"
+    "static/js/main.59ef4118.js"
   ]
 }
