@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b426c6b8.css",
-    "main.js": "/static/js/main.59b9ef7b.js",
+    "main.css": "/static/css/main.5da1360b.css",
+    "main.js": "/static/js/main.c3797b05.js",
     "static/media/visual-intelligence-platform.jpg": "/static/media/visual-intelligence-platform.5fefa6c35ef6bdf6dc5a.jpg",
     "static/media/retail-automation-hub.jpg": "/static/media/retail-automation-hub.1aeb65e9dc8f1620e191.jpg",
     "static/media/about-us.jpg": "/static/media/about-us.ade8f82db84246824840.jpg",
     "static/media/get-in-touch.jpg": "/static/media/get-in-touch.bd2f338c2a45b8fdb861.jpg",
-    "static/media/home.jpg": "/static/media/home.9432c43ae197e5831dcd.jpg",
     "index.html": "/index.html",
-    "main.b426c6b8.css.map": "/static/css/main.b426c6b8.css.map",
-    "main.59b9ef7b.js.map": "/static/js/main.59b9ef7b.js.map"
+    "main.5da1360b.css.map": "/static/css/main.5da1360b.css.map",
+    "main.c3797b05.js.map": "/static/js/main.c3797b05.js.map"
   },
   "entrypoints": [
-    "static/css/main.b426c6b8.css",
-    "static/js/main.59b9ef7b.js"
+    "static/css/main.5da1360b.css",
+    "static/js/main.c3797b05.js"
   ]
 }
