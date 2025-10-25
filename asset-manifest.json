@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.cae54413.css",
-    "main.js": "/static/js/main.fc08e94e.js",
+    "main.css": "/static/css/main.9f5d396a.css",
+    "main.js": "/static/js/main.7e48e324.js",
     "static/media/home-bg.mp4": "/static/media/home-bg.97247a05d72483b0e1db.mp4",
-    "static/media/visual-intelligence-platform.jpg": "/static/media/visual-intelligence-platform.5fefa6c35ef6bdf6dc5a.jpg",
     "index.html": "/index.html",
-    "main.cae54413.css.map": "/static/css/main.cae54413.css.map",
-    "main.fc08e94e.js.map": "/static/js/main.fc08e94e.js.map"
+    "main.9f5d396a.css.map": "/static/css/main.9f5d396a.css.map",
+    "main.7e48e324.js.map": "/static/js/main.7e48e324.js.map"
   },
   "entrypoints": [
-    "static/css/main.cae54413.css",
-    "static/js/main.fc08e94e.js"
+    "static/css/main.9f5d396a.css",
+    "static/js/main.7e48e324.js"
   ]
 }
