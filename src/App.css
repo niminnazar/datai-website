@@ -1,9 +1,453 @@
+/* --- Global Styles --- */
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
-  color: white;
+  color: #e0e0e0;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
-a:hover {
-  opacity: 0.7;
+
+.app-container {
+  min-height: 100vh;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: color 0.2s;
+}
+
+.nav-links li:hover {
+  color: #00aeffff;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  z-index: 101; /* above video */
+}
+
+/* --- Hero / Video Section --- */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* full viewport */
+  overflow: hidden;
+}
+
+.home-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill container */
+  object-position: contain; /* show top of video on mobile */
+  z-index: -1; /* behind content */
+}
+
+.home-overlay {
+  position: absolute;
+  bottom: 30px; /* bottom-left */
+  left: 30px;
+  text-align: left;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.home-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* --- About Section --- */
+.about-text,
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  min-height: 80vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* --- Images --- */
+.main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+}
+/* --- Center content section images --- */
+.image-container img {
+  display: block;   /* ensures block-level behavior */
+  margin: 0 auto;   /* horizontally center */
+  max-width: 100%;  /* responsive width */
+  height: auto;     /* maintain aspect ratio */
+}
+
+/* --- Contact and Brand Text --- */
+.datai-black {
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.datai-blue {
+  color: #00aeffff;
+  font-weight: bold;
+}
+
+.contact-link {
+  color: #00aeffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* --- Mobile Styles --- */
+@media (max-width: 768px) {
+  /* Hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Navbar links */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    margin-top: 10px;
+    z-index: 101;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    color: #e0e0e0;
+  }
+
+  /* Video adjustments */
+  .home-video {
+    object-fit: contain; /* show full video without cropping */
+    width: 100%;
+    height: auto;        /* maintain aspect ratio */
+    max-height: 100vh;   /* do not exceed viewport height */
+  }
+
+  .home-overlay {
+    bottom: 20px;
+    left: 20px;
+    padding: 0 10px;
+  }
+
+  /* Images responsive */
+  .main-image {
+    width: 100%;
+    max-height: 60vh;
+  }
+}
+/* --- Mobile Video Adjustments --- */
+@media (max-width: 768px) {
+  .home-container {
+    height: 100vh; /* full viewport */
+  }
+
+  .home-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* ensures the entire video fits */
+    object-position: top;
+  }
+
+  .home-overlay {
+    bottom: 300px;
+    left: 20px;
+    padding: 0 10px;
+  }
+}
+/* --- Mobile Images Full Width --- */
+@media (max-width: 768px) {
+  .main-image {
+    width: 90%;       /* almost full width */
+    max-width: 600px; /* optional: cap size */
+    height: auto;     /* maintain aspect ratio */
+    margin: 0 auto;   /* center horizontally */
+  }
+
+  .image-container {
+    align-items: center; /* center images horizontally */
+  }
+}
+/* --- iOS-specific adjustments for home page video --- */
+@supports (-webkit-touch-callout: none) {
+  .home-container {
+    height: 100vh; /* ensure it takes full viewport height on iOS */
+  }
+
+  .home-video {
+    object-fit: contain;   /* fill container without stretching */
+    object-position: top; /* show top of video */
+  }
+
+  .home-overlay {
+    bottom: 300px; /* move text slightly higher for iOS */
+    left: 20px;
+    padding: 0 10px;
+  }
+}
+.inonechat {
+  color: #00aeffff; /* Blue color */
+  font-weight: 700;
+}
+
+.realtimeinsights {
+  color: #00aeffff; /* Blue color */
+  font-weight: 700;
+}
+
+.rah-text {
+  text-align: center;
+  padding: 20px;
+}
+
+.rah-boxes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rah-box {
+  background-color: #000;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Make all text inside white */
+  color: #e0e0e0;
+}
+
+.rah-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rah-box p {
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.example-box {
+  background: #000; /* soft light blue */
+  
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+/* 2x2 dashboard grid for main boxes */
+.rah-boxes-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 12px;
+  width: 100%;
+   margin: 0 auto;                        /* center grid itself */
+  box-sizing: border-box;
+  padding: 0 12px; 
+}
+
+/* Each main box styling */
+.rah-box {
+  background: #000;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.65rem; /* slightly smaller */
+  line-height: 1.2;
+  max-height: 40vh; /* max 40% of viewport height */
+  overflow-y: auto; /* scroll only inside box if content overflows */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.rah-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Inner example boxes grid */
+.example-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+/* Individual example box styling */
+.example-box {
+  background: #000;
+ border-left: 4px solid #00aeffff; /* accent color */
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Responsive: on smaller screens, switch to 1 column */
+@media (max-width: 900px) {
+  .rah-boxes-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+.center-container {
+  text-align: center;
+}
+/* Make this specific box span full width */
+.full-width-box {
+  grid-column: 1 / -1; /* span all columns in a grid parent */
+  width: auto;
+  justify-self: stretch;
+  box-sizing: border-box;
+}
+
+/* Optional: remove max-width if parent has one */
+.full-width-box {
+  grid-column: 1 / -1;
+  max-height: 45vh; /* slightly taller if needed */
+  
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 900px) {
+  .rah-boxes-dashboard {
+    grid-template-columns: 1fr;
+  }
+  .rah-box {
+    max-height: none;
+  }
+}
+.small-black-text {
+  font-size: 1rem; /* smaller font size */
+  color: #e0e0e0;     /* black text */
+  text-decoration: underline; /* underline the text */
+  text-align: center; /* optional: center it horizontally */
+}
+
+.small-black-text .contact-link {
+  color: #e0e0e0;     /* ensure link is black */
+  text-decoration: none; /* optional: remove underline */
+  font-weight: bold; /* optional: make it stand out */
+}
+.rah-boxes-zigzag { display: flex; flex-direction: column;
+   /* stack boxes vertically */ gap: 20px; /* spacing between boxes */ } 
+   /* Odd boxes aligned left */ .rah-boxes-zigzag .rah-box-zigzag:nth-child(odd) 
+   { align-self: flex-start; /* left */ text-align: left; } 
+   /* Even boxes aligned right */ .rah-boxes-zigzag .rah-box-zigzag:nth-child(even) 
+   { align-self: flex-end; /* right */ text-align: right; }
+    /* Box styling */ .rah-box-zigzag { background-color: #000; padding: 20px; border-radius: 50px; 
+      border-left: 3px solid #00aeffff; max-width: 70%; 
+      /* limit width so left/right is visible */ box-shadow: 0 2px 6px rgba(0,0,0,0.1); } 
+      /* Responsive: stack on mobile */ @media (max-width: 768px) 
+      { .rah-box-zigzag { max-width: 90%; align-self: center !important; text-align: center !important; } }
+
+/* Default position (desktop) */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px; /* distance from bottom */
+  right: 20px;  /* distance from right */
+  z-index: 1000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .whatsapp-icon {
+    bottom: 40px; /* move it slightly up */
+  }
+}
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
 }
